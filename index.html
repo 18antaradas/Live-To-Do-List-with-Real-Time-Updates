@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live To-Do List</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Our CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h2>📝 Live To-Do List</h2>
+    <p class="subtitle">Real-time task management — no page reload needed</p>
+
+    <!-- Stats Bar -->
+    <div class="stats">
+      <div><b id="totalCount">0</b>Total</div>
+      <div><b id="pendingCount">0</b>Pending</div>
+      <div><b id="doneCount">0</b>Completed</div>
+    </div>
+
+    <!-- Input Row -->
+    <div class="input-row">
+      <input type="text" id="taskInput" placeholder="Enter a new task...">
+      <select id="prioritySelect" class="priority-select">
+        <option value="medium">⚡ Medium</option>
+        <option value="high">🔴 High</option>
+        <option value="low">🟢 Low</option>
+      </select>
+      <button id="addTask" class="btn-add">Add</button>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="pending">Pending</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <button class="filter-btn" data-filter="high">🔴 High</button>
+      <button class="btn-clear" id="clearCompleted">Clear Completed</button>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList">
+      <li class="empty-state">
+        <span class="icon">🗒️</span>
+        No tasks yet. Add one above!
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"></div>
+
+  <!-- Our JS file (loaded at bottom so HTML loads first) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
